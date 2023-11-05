@@ -11,7 +11,7 @@ export default function Home() {
   const address = 'localhost'
 
   const createLinkToken = React.useCallback(async () => {
-    await fetch(`http://${address}:8080/api/create_link_token`, {
+    await fetch(`http://172.20.10.4:8080/api/create_link_token`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -64,7 +64,7 @@ export default function Home() {
       </LinearGradient>
       <View style={{  width: '100%', marginTop: 445, height: '55%', marginLeft: 15}}>
         <Text style={{fontWeight: 700, fontSize: 20, marginBottom: 15 }}>
-          Transactions
+          Transactions {linkToken}
         </Text>
         <Feed/>
       </View>
