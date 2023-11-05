@@ -6,6 +6,10 @@ import { AntDesign } from '@expo/vector-icons';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import CreditCard from "../../components/CreditCard";
 import FList from "../../components/FList";
+import * as LocalAuthentication from 'expo-local-authentication';
+import ReactNativeBiometrics, { BiometryTypes } from 'react-native-biometrics'
+
+const rnBiometrics = new ReactNativeBiometrics()
 
 
 const startWallet = [
@@ -62,6 +66,7 @@ export default function Home() {
   const [walletModal, setWalletModal] = React.useState(false);
   const [guideModal, setGuide] = React.useState(false);
   const [linkToken, setLinkToken] = React.useState('link-sandbox-76978d26-014f-43a7-bec2-7db43efa9202');
+  const [paymentModal, setPaymentModal] = React.useState(false);
   // const address = Platform.OS === 'ios' ? '172.20.10.2' : '10.0.2.2';
   const address = 'localhost'
 
@@ -90,9 +95,7 @@ export default function Home() {
     }
   }, [linkToken]);
 
-  const newfunc = () =>{
-
-  }
+  
 
   const toggelWallet = () => {
     setWalletModal(!walletModal);
@@ -100,6 +103,26 @@ export default function Home() {
 
   const toggelGuide = () => {
     setGuide(!guideModal);
+  }
+
+  const onFaceId = async () => {
+    const hasHardware = await LocalAuthentication.hasHardwareAsync();
+    if (hasHardware) {
+      const isEnrolled = await LocalAuthentication.isEnrolledAsync();
+      if (isEnrolled) {
+        const { success } = await LocalAuthentication.authenticateAsync();
+        if (success) {
+          console.log("success");
+        } else {
+          console.log("failed");
+        }
+      }
+    }
+  }
+
+  const togglePayment = async () => {
+    setPaymentModal(!paymentModal);
+    if(!paymentModal) await onFaceId();
   }
 
   return (
@@ -131,7 +154,7 @@ export default function Home() {
           </Text>
           
           <View style={[{marginTop: 65, width: '80%', height: 65, borderRadius: 15 , backgroundColor: 'white', alignItems: 'center', justifyContent: 'center'}, styles.shadow]}>
-            <TouchableOpacity onPress={newfunc}>
+            <TouchableOpacity onPress={togglePayment}>
               <Text style={{ fontSize: 20, fontWeight: 600 }} >
                 Make Payment
               </Text>
@@ -141,6 +164,18 @@ export default function Home() {
         </SafeAreaView>
 
       </LinearGradient>
+      <Modal
+      visible={paymentModal}
+      animationType="fade"
+      presentationStyle="fullScreen"
+      onRequestClose={togglePayment}
+      >
+        <SafeAreaView style={{bottom: 0,alignItems:'center',width: '100%',position: 'absolute', height: '100%', borderWidth: 1, borderColor: 'red'}}>
+          <TouchableOpacity onPress={togglePayment}>
+            <Text>cancel</Text>
+          </TouchableOpacity>
+        </SafeAreaView>
+      </Modal>
 
       <Modal 
       visible={walletModal}
