@@ -1,13 +1,13 @@
 import * as React from "react";
-import { app } from './AuthProvider';
-import {where,getDocs, query,getFirestore, collection,  addDoc, } from "firebase/firestore";
+// import { app } from './AuthProvider';
+// import {where,getDocs, query,getFirestore, collection,  addDoc, } from "firebase/firestore";
 
 
-import { getStorage, ref, uploadBytes, getDownloadURL, uploadBytesResumable } from 'firebase/storage';
-import { emailTemplate } from "./emailtemplate";
+// import { getStorage, ref, uploadBytes, getDownloadURL, uploadBytesResumable } from 'firebase/storage';
+// import { emailTemplate } from "./emailtemplate";
 
 
-const db = getFirestore(app);
+// const db = getFirestore(app);
 const DBContext = React.createContext();
 const delay = (milliseconds) => {
   return new Promise((resolve) => {
@@ -21,10 +21,13 @@ const FirestoreProvider = ({ children }) => {
 
   /*
 
-
       DB FUNCTIONS FOR EVENTS
 
   */
+
+
+  
+
 
 
 

@@ -2,8 +2,6 @@ import * as React from "react";
 
 
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth();
 // create context
 const AuthStateContext = React.createContext()
 
@@ -12,7 +10,6 @@ const AuthStateProvider = ({ children }) => {
   const [$authState, $setAuthState] = React.useState({ Authenticated: false });
   const [verificationId, setVerificationId] = React.useState();
 
-  const googleProvider = new GoogleAuthProvider(auth);
   const signInWithGoogle = async () => {
 
   }

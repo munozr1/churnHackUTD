@@ -1,12 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { AuthStateProvider } from './src/providers/AuthProvider';
+// import { FirestoreProvider } from './src/providers/FirestoreProvider';
+import Main from './src/main';
+
 
 export default function App() {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to st:w  art working on your  app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <AuthStateProvider>
+      {/* <FirestoreProvider> */}
+        <Main></Main>
+      {/* </FirestoreProvider> */}
+    </AuthStateProvider>
+
   );
 }
 
