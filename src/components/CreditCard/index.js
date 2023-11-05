@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
+import * as Linking from 'expo-linking';
 
 const cardData = [
   {
@@ -21,6 +22,11 @@ const cardData = [
 ];
 
 export default function CreditCard() {
+
+  const openLink = () => {
+    Linking.openURL('https://cdn.plaid.com/link/v2/stable/link.html?isWebview=true&token=link-sandbox-b5b83d13-4fa7-4578-a691-9ce0d5177e23&receivedRedirectUri=');
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView vertical style={{marginTop: 100}}>
@@ -32,7 +38,7 @@ export default function CreditCard() {
           </View>
         ))}
       </ScrollView>
-      <TouchableOpacity style={{marginBottom: 100}}>
+      <TouchableOpacity style={{marginBottom: 100}} onPress={openLink}>
         <AntDesign name="plus" size={24} color="black"  />
       </TouchableOpacity>
     </SafeAreaView>
