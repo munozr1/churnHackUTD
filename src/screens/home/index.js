@@ -7,10 +7,11 @@ import Feed from '../../components/Feed';
 
 export default function Home() {
   const [linkToken, setLinkToken] = React.useState(null);
-  // const address = Platform.OS === 'ios' ? 'localhost' : '10.0.2.2';
-  const address = 'localhost'
+  const address = Platform.OS === 'ios' ? '172.20.10.2' : '10.0.2.2';
+  // const address = 
 
   const createLinkToken = React.useCallback(async () => {
+    console.log("createLinkToken => address => ",address);
     await fetch(`http://${address}:8080/api/create_link_token`, {
       method: "POST",
       headers: {
