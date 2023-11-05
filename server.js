@@ -65,6 +65,7 @@ app.post('/api/create_link_token', async (req, res, next) => {
 
 // Exchanges the public token from Plaid Link for an access token
 app.post('/api/exchange_public_token', async (req, res, next) => {
+  console.log("exchange_public_token => ",req.body.public_token);
   const exchangeResponse = await client.itemPublicTokenExchange({
     public_token: req.body.public_token,
   });

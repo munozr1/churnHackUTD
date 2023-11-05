@@ -3,11 +3,11 @@ import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 
-const timeline= [
+const timeline = [
   {
     id: 1,
-    content: 'Applied to',
-    target: 'Front End Developer',
+    content: 'Transaction at Quicktrip',
+    target: '$12.34',
     href: '#',
     date: 'Sep 20',
     datetime: '2020-09-20',
@@ -16,8 +16,8 @@ const timeline= [
   },
   {
     id: 2,
-    content: 'Advanced to phone screening by',
-    target: 'Bethany Blake',
+    content: 'Purchase at 7-Eleven',
+    target: '$45.67',
     href: '#',
     date: 'Sep 22',
     datetime: '2020-09-22',
@@ -26,8 +26,8 @@ const timeline= [
   },
   {
     id: 3,
-    content: 'Completed phone screening with',
-    target: 'Martha Gardner',
+    content: 'Shopping at Walmart',
+    target: '$18.99',
     href: '#',
     date: 'Sep 28',
     datetime: '2020-09-28',
@@ -36,8 +36,8 @@ const timeline= [
   },
   {
     id: 4,
-    content: 'Advanced to interview by',
-    target: 'Bethany Blake',
+    content: 'Order from Amazon',
+    target: '$30.50',
     href: '#',
     date: 'Sep 30',
     datetime: '2020-09-30',
@@ -46,8 +46,8 @@ const timeline= [
   },
   {
     id: 5,
-    content: 'Completed interview with',
-    target: 'Katherine Snyder',
+    content: 'Transaction at Target',
+    target: '$7.99',
     href: '#',
     date: 'Oct 4',
     datetime: '2020-10-04',
@@ -56,157 +56,155 @@ const timeline= [
   },
   {
     id: 6,
-    content: 'Applied to',
-    target: 'Front End Developer',
+    content: 'Gas refill at Chevron',
+    target: '$22.50',
     href: '#',
-    date: 'Sep 20',
-    datetime: '2020-09-20',
-    icon: AntDesign,
-    iconBackground: 'bg-gray-400',
+    date: 'Oct 10',
+    datetime: '2020-10-10',
+    icon: Feather,
+    iconBackground: 'bg-blue-500',
   },
   {
     id: 7,
-    content: 'Advanced to phone screening by',
-    target: 'Bethany Blake',
+    content: 'Coffee at Starbucks',
+    target: '$5.99',
     href: '#',
-    date: 'Sep 22',
-    datetime: '2020-09-22',
-    icon: Feather,
-    iconBackground: 'bg-blue-500',
+    date: 'Oct 15',
+    datetime: '2020-10-15',
+    icon: AntDesign,
+    iconBackground: 'bg-green-500',
   },
   {
     id: 8,
-    content: 'Completed phone screening with',
-    target: 'Martha Gardner',
+    content: 'Electronics at Best Buy',
+    target: '$89.99',
     href: '#',
-    date: 'Sep 28',
-    datetime: '2020-09-28',
-    icon: AntDesign,
-    iconBackground: 'bg-green-500',
-  },
-  {
-    id: 9,
-    content: 'Advanced to interview by',
-    target: 'Bethany Blake',
-    href: '#',
-    date: 'Sep 30',
-    datetime: '2020-09-30',
+    date: 'Oct 20',
+    datetime: '2020-10-20',
     icon: Feather,
     iconBackground: 'bg-blue-500',
   },
   {
-    id: 10,
-    content: 'Completed interview with',
-    target: 'Katherine Snyder',
+    id: 9,
+    content: 'Lunch at Subway',
+    target: '$10.50',
     href: '#',
-    date: 'Oct 4',
-    datetime: '2020-10-04',
-    icon: AntDesign,
-    iconBackground: 'bg-green-500',
-  },
-  {
-    id: 11,
-    content: 'Applied to',
-    target: 'Front End Developer',
-    href: '#',
-    date: 'Sep 20',
-    datetime: '2020-09-20',
+    date: 'Oct 25',
+    datetime: '2020-10-25',
     icon: AntDesign,
     iconBackground: 'bg-gray-400',
   },
   {
-    id: 12,
-    content: 'Advanced to phone screening by',
-    target: 'Bethany Blake',
+    id: 10,
+    content: 'Books at Barnes & Noble',
+    target: '$34.99',
     href: '#',
-    date: 'Sep 22',
-    datetime: '2020-09-22',
+    date: 'Oct 30',
+    datetime: '2020-10-30',
+    icon: Feather,
+    iconBackground: 'bg-blue-500',
+  },
+  {
+    id: 11,
+    content: 'Clothing at H&M',
+    target: '$56.75',
+    href: '#',
+    date: 'Nov 5',
+    datetime: '2020-11-05',
+    icon: AntDesign,
+    iconBackground: 'bg-green-500',
+  },
+  {
+    id: 12,
+    content: 'Groceries at Whole Foods',
+    target: '$43.25',
+    href: '#',
+    date: 'Nov 10',
+    datetime: '2020-11-10',
     icon: Feather,
     iconBackground: 'bg-blue-500',
   },
   {
     id: 13,
-    content: 'Completed phone screening with',
-    target: 'Martha Gardner',
+    content: 'Dinner at Olive Garden',
+    target: '$29.99',
     href: '#',
-    date: 'Sep 28',
-    datetime: '2020-09-28',
+    date: 'Nov 15',
+    datetime: '2020-11-15',
     icon: AntDesign,
     iconBackground: 'bg-green-500',
   },
   {
     id: 14,
-    content: 'Advanced to interview by',
-    target: 'Bethany Blake',
+    content: 'Home Depot Purchase',
+    target: '$67.88',
     href: '#',
-    date: 'Sep 30',
-    datetime: '2020-09-30',
+    date: 'Nov 20',
+    datetime: '2020-11-20',
     icon: Feather,
     iconBackground: 'bg-blue-500',
   },
   {
     id: 15,
-    content: 'Completed interview with',
-    target: 'Katherine Snyder',
+    content: 'Online Shopping at eBay',
+    target: '$54.76',
     href: '#',
-    date: 'Oct 4',
-    datetime: '2020-10-04',
+    date: 'Nov 25',
+    datetime: '2020-11-25',
     icon: AntDesign,
     iconBackground: 'bg-green-500',
   },
   {
     id: 16,
-    content: 'Applied to',
-    target: 'Front End Developer',
+    content: 'Pharmacy at CVS',
+    target: '$15.25',
     href: '#',
-    date: 'Sep 20',
-    datetime: '2020-09-20',
+    date: 'Nov 30',
+    datetime: '2020-11-30',
+    icon: Feather,
+    iconBackground: 'bg-blue-500',
+  },
+  {
+    id: 17,
+    content: 'Gym Membership at LA Fitness',
+    target: '$49.99',
+    href: '#',
+    date: 'Dec 5',
+    datetime: '2020-12-05',
     icon: AntDesign,
     iconBackground: 'bg-gray-400',
   },
   {
-    id: 17,
-    content: 'Advanced to phone screening by',
-    target: 'Bethany Blake',
+    id: 18,
+    content: 'Flight Booking at Delta Airlines',
+    target: '$325.00',
     href: '#',
-    date: 'Sep 22',
-    datetime: '2020-09-22',
+    date: 'Dec 10',
+    datetime: '2020-12-10',
     icon: Feather,
     iconBackground: 'bg-blue-500',
-  },
-  {
-    id: 18,
-    content: 'Completed phone screening with',
-    target: 'Martha Gardner',
-    href: '#',
-    date: 'Sep 28',
-    datetime: '2020-09-28',
-    icon: AntDesign,
-    iconBackground: 'bg-green-500',
   },
   {
     id: 19,
-    content: 'Advanced to interview by',
-    target: 'Bethany Blake',
+    content: 'Car Rental at Enterprise',
+    target: '$75.99',
     href: '#',
-    date: 'Sep 30',
-    datetime: '2020-09-30',
-    icon: Feather,
-    iconBackground: 'bg-blue-500',
-  },
-  {
-    id: 20,
-    content: 'Completed interview with',
-    target: 'Katherine Snyder',
-    href: '#',
-    date: 'Oct 4',
-    datetime: '2020-10-04',
+    date: 'Dec 15',
+    datetime: '2020-12-15',
     icon: AntDesign,
     iconBackground: 'bg-green-500',
   },
+  {
+    id: 20,
+    content: 'Tech Gadgets at Apple Store',
+    target: '$899.99',
+    href: '#',
+    date: 'Dec 20',
+    datetime: '2020-12-20',
+    icon: Feather,
+    iconBackground: 'bg-blue-500',
+  },
 ];
-
-
 
 export default function Feed() {
   return (
@@ -218,17 +216,14 @@ export default function Feed() {
               <View style={styles.timelineSeparator} />
             )}
             <View style={styles.timelineContent}>
-              <View style={styles.iconContainer}>
-                <View style={[styles.icon, { backgroundColor: event.iconBackground }]}>
-                  {<event.icon style={styles.iconImage} />}
-                </View>
-              </View>
               <View style={styles.detailsContainer}>
                 <Text style={styles.descriptionText}>
-                  {event.content}{' '}
-                  <Text style={styles.targetText}>{event.target}</Text>
+                  {event.content}
                 </Text>
                 <Text style={styles.dateText}>{event.date}</Text>
+              </View>
+              <View style={styles.targetContainer}>
+                <Text style={styles.targetText}>{event.target}</Text>
               </View>
             </View>
           </View>
@@ -258,29 +253,19 @@ const styles = {
     flexDirection: 'row',
     alignItems: 'center',
   },
-  iconContainer: {
-    marginRight: 16,
-  },
-  icon: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  iconImage: {
-    width: 25,
-    height: 25,
-    color: 'white',
-  },
   detailsContainer: {
     flex: 1,
+  },
+  targetContainer: {
+    justifyContent: 'flex-end',
+    margin: 20
   },
   descriptionText: {
     fontSize: 16,
     color: '#333',
   },
   targetText: {
+    color: 'red',
     fontWeight: 'bold',
   },
   dateText: {
@@ -288,4 +273,3 @@ const styles = {
     color: '#666',
   },
 };
-
